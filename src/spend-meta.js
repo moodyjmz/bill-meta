@@ -1,4 +1,3 @@
-import { _META_MATCHES } from './lookups/meta.js';
 export class SpendMeta {
     constructor() {
         this._matches = [];
