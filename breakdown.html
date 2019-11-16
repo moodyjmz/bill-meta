@@ -1,0 +1,29 @@
+<html>
+
+<head>
+</head>
+
+<body>
+    <script src="data/data.js"></script>
+    <script type="module">
+        import {Spend} from './src/spend.js';
+        import {SpendMap} from './src/spend-map.js';
+        import {SpendMeta, _META_MATCHES} from './src/spend-meta.js';
+        // data format
+        // data\ttranscation\tlocation\tin\tout\n
+        const lines = data.split('\n');
+        const details = [];
+        const spendingMap = new SpendMap();
+        const spendingMeta = new SpendMeta();
+        spendingMeta.matches = _META_MATCHES;
+        lines.forEach((line) => {
+            const spend = new Spend();
+            spend.details = spendingMap.mapItem(line.split('\t'));
+            spend.meta = spendingMeta.buildMeta(spend.details);
+            details.push(spend);
+        });
+        console.log(details);
+    </script>
+</body>
+
+</html>
