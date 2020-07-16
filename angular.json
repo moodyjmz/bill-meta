@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "cc-explorer"
+    }
+  },
+  "defaultProject": "cc-explorer",
+  "cli": {
+    "analytics": "96757380-a67b-42da-bf84-6f0080c2c5ed"
+  }
 }
